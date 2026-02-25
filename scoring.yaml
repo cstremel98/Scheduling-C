@@ -1,0 +1,115 @@
+HelperFunctions:
+  helper_functions:
+    value: 50
+    tests:
+      - mark_start
+      - mark_end
+      - finalize_stats
+      - response_time_calculation_detailed
+      - turnaround_time_calculation_detailed
+      - finalize_stats_with_multiple_processes
+      - RESERVE_complex_response_time_scenario
+      - RESERVE_complex_turnaround_time_scenario
+      - RESERVE_uneven_process_timing
+      - RESERVE_edge_case_validation
+
+Fifo:
+  fifo_scheduling:
+    value: 8
+    tests:
+      - e0
+      - e0_e1
+      - e1_e0
+      - e0_e1_1
+      - e1_e0_e1
+      - e1_e1_e0
+      - test_2proc_0entry_1entry_fifo
+      - 5proc_fifo
+      - tie_breaking_same_arrival_time
+      - single_process_zero_duration
+      - RESERVE_fractional_arrival_times
+      - RESERVE_fifo_eight_processes
+
+Sjf:
+  sjf_scheduling:
+    value: 8
+    tests:
+      - e0
+      - l1_l2
+      - l2_l1
+      - l1_l2_l2
+      - l2_l1_l2
+      - l2_l2_l1
+      - test_2proc_0entry_1entry_sjf
+      - 5proc_sjf
+      - tie_breaking_same_job_length
+      - RESERVE_unusual_job_durations
+      - RESERVE_very_small_durations
+      - RESERVE_sjf_six_processes
+
+Lifo:
+  lifo_scheduling:
+    value: 8
+    tests:
+      - e0
+      - e0_e1
+      - e1_e0
+      - e0_e1_1
+      - e1_e0_e1
+      - e1_e1_e0
+      - test_2proc_0entry_1entry_lifo
+      - 5proc_lifo
+      - RESERVE_mixed_positive_negative_times
+
+Stcf:
+  stcf_scheduling:
+    value: 8
+    tests:
+      - e0
+      - e0_e1
+      - e1_e0
+      - e0_e1_1
+      - e1_e0_e1
+      - e1_e1_e0
+      - test_2proc_0entry_1entry_stcf
+      - 5proc_stcf
+      - tie_breaking_same_time_remaining
+      - RESERVE_fractional_remaining_times
+      - RESERVE_stcf_preemption_simulation
+
+Priority:
+  priority_scheduling:
+    value: 10
+    tests:
+      - pri0
+      - pri0_pri1
+      - pri1_pri0
+      - pri0_pri1_pri1
+      - pri1_pri0_pri1
+      - pri1_pri1_pri0
+      - 5proc_priority
+      - tie_breaking_same_priority
+      - priority_comparison_explanation
+      - empty_process_list
+      - RESERVE_unusual_priority_values
+      - RESERVE_very_large_priority_numbers
+      - RESERVE_negative_priority_values
+      - RESERVE_priority_seven_processes
+
+RoundRobin:
+  rr_scheduling:
+    value: 8
+    tests:
+      - pri0
+      - pri0_pri1
+      - pri1_pri0
+      - pri0_pri1_pri1
+      - pri1_pri0_pri1
+      - pri1_pri1_pri0
+      - test_2proc_0entry_0entry_rr
+      - test_2proc_0entry_1entry_rr
+      - 5proc_rr
+      - time_quantum_effect_explanation
+      - initial_scheduling_all_never_run
+      - RESERVE_unusual_last_run_times
+      - RESERVE_round_robin_cycling_verification
