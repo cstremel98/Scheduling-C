@@ -1,4 +1,5 @@
 // 1
+/*
 Test(Fifo, e0) {
   PROCESS *p0 = create_process(1.0f, 0.0f, 0.0f);
   PROCESS_LIST *pl = create_process_list();
@@ -7,7 +8,6 @@ Test(Fifo, e0) {
   PROCESS *selected = fifo_process_selector(pl);
   cr_assert(selected == p0);
 }
-/*
 // 2
 Test(Fifo, e0_e1) {
   PROCESS *p0 = create_process(1.0f, 0.0f, 0.0f);

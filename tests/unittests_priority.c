@@ -7,7 +7,6 @@ Test(Priority, pri0) {
   cr_assert(selected == p0);
 }
 
-/*
 Test(Priority, pri0_pri1) {
   PROCESS *p0 = create_process(1.0f, 0.0f, 0.0f);
   PROCESS *p1 = create_process(1.0f, 1.0f, 0.0f);
@@ -79,7 +78,6 @@ Test(Priority, tie_breaking_same_priority) {
   PROCESS *selected = priority_process_selector(pl);
   cr_assert(selected == p0);
 }
-
 Test(Priority, priority_comparison_explanation) {
   PROCESS *high_priority = create_process(1.0f, 0.0f, 0.0f);
   PROCESS *low_priority = create_process(1.0f, 1.0f, 0.0f);
@@ -99,4 +97,4 @@ Test(Priority, empty_process_list) {
   
   PROCESS *selected = priority_process_selector(empty_pl);
   cr_assert(selected == NULL);
-}*/
+}

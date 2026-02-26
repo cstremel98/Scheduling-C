@@ -1,5 +1,3 @@
-
-
 #ifndef PROCESS_LIST_H
 #define PROCESS_LIST_H
 
@@ -7,7 +5,6 @@
 #include <stdbool.h>
 
 #include "process.h"
-
 
 #define MAX_NUMBER_PROCESSES 256
 

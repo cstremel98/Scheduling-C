@@ -5,7 +5,6 @@
 #include "student_code.h"
 #include "stdio.h"
 
-/*
 void mark_start(PROCESS* p, SCHEDULER_STATS* stats, float time_started) {
   // todo
 }
@@ -46,15 +45,31 @@ int compare_last_run(PROCESS p1, PROCESS p2) {
   // todo
 }
 
-*/
 PROCESS* fifo_process_selector(PROCESS_LIST* pl) {
+	PROCESS* curr_process =	pl->processes[pl->num_processes-1]; 
+	SCHEDULER_STATS* stats = get_empty_stats_block();
+
 	if(!is_empty(pl)) {
-		//run(process , stats , curr time);	
+	
+		for(int i=0; i<pl->num_processes; i++) {
+			if(pl->processes[i]->priority < curr_process->priority) {
+				curr_process = pl->processes[i];
+			} else if ((pl->processes[i]->priority == curr_process->priority) && (pl->processes[i]->id < curr_process->id)) {
+				curr_process = pl->processes[i];
+			}
+		}	
+		
+		float curr_time = 0;
+
+		run(curr_process, stats, curr_time);
+		
+		return curr_process;
+	
 	}
-	//return process
+
+	return NULL;
 }
 
-/*
 PROCESS* rr_process_selector(PROCESS_LIST* pl) {
   // todo
 }
@@ -64,7 +79,28 @@ PROCESS* sjf_process_selector(PROCESS_LIST* pl) {
 }
 
 PROCESS* priority_process_selector(PROCESS_LIST* pl) {
-	// todo
+	
+	PROCESS* curr_process =	pl->processes[pl->num_processes-1]; 
+	SCHEDULER_STATS* stats = get_empty_stats_block();
+
+	if(!is_empty(pl)) {
+		for(int i=0; i<pl->num_processes; i++) {
+			if(pl->processes[i]->priority < curr_process->priority) {
+				curr_process = pl->processes[i];
+			} else if ((pl->processes[i]->priority == curr_process->priority) && (pl->processes[i]->id < curr_process->id)) {
+				curr_process = pl->processes[i];
+			}
+		}	
+		
+		float curr_time = 0;
+
+		run(curr_process, stats, curr_time);
+		
+		return curr_process;
+	}
+
+	return NULL;
+
 }
 
 PROCESS* lifo_process_selector(PROCESS_LIST* pl) {
@@ -73,4 +109,4 @@ PROCESS* lifo_process_selector(PROCESS_LIST* pl) {
 
 PROCESS* stcf_process_selector(PROCESS_LIST* pl) {
   // todo
-}*/
+}

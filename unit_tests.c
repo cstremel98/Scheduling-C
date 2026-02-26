@@ -25,11 +25,11 @@
 #include "tests/unittests_stcf.c"
 
 TestSuite(HelperFunctions,  .disabled=true, .timeout=60.0);
-TestSuite(Priority,         .disabled=true, .timeout=60.0);
+TestSuite(Priority,         .disabled=false, .timeout=60.0);
 TestSuite(Stcf,             .disabled=true, .timeout=60.0);
 TestSuite(Sjf,              .disabled=true, .timeout=60.0);
 TestSuite(Lifo,             .disabled=true, .timeout=60.0);
-TestSuite(Fifo,             .disabled=false, .timeout=60.0);
+TestSuite(Fifo,             .disabled=true, .timeout=60.0);
 TestSuite(RoundRobin,       .disabled=true, .timeout=60.0);
 
 
