@@ -17,7 +17,6 @@ Test(RoundRobin, pri0_pri1) {
   PROCESS *selected = rr_process_selector(pl);
   cr_assert(selected == p0);
   selected->last_run = 2.0;
-
   selected = rr_process_selector(pl);
   cr_assert(selected == p1);
   selected->last_run = 3.0;
@@ -25,7 +24,6 @@ Test(RoundRobin, pri0_pri1) {
   selected = rr_process_selector(pl);
   cr_assert(selected == p0);
 }
-
 Test(RoundRobin, pri1_pri0) {
   PROCESS *p0 = create_process(1.0f, 1.0f, 0.0f);
   PROCESS *p1 = create_process(1.0f, 0.0f, 0.0f);

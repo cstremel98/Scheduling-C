@@ -20,7 +20,6 @@ Test(Sjf, l1_l2) {
   cr_assert(selected != p1);
   cr_assert(selected != NULL);
 }
-
 Test(Sjf, l2_l1) {
   PROCESS *p0 = create_process(2.0f, 0.0f, 0.0f);
   PROCESS *p1 = create_process(1.0f, 0.0f, 0.0f);

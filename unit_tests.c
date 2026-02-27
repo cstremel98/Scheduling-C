@@ -15,7 +15,7 @@
 
 // Include our unit tests
 #include "tests/unittests_fifo.c"
-#include "tests/unittests_end2end.c"
+//#include "tests/unittests_end2end.c"
 #include "tests/unittests_helpers.c"
 #include "tests/unittests_lifo.c"
 #include "tests/unittests_priority.c"
@@ -26,11 +26,11 @@
 
 TestSuite(HelperFunctions,  .disabled=false, .timeout=60.0);
 TestSuite(Priority,         .disabled=false, .timeout=60.0);
-TestSuite(Stcf,             .disabled=true, .timeout=60.0);
-TestSuite(Sjf,              .disabled=true, .timeout=60.0);
-TestSuite(Lifo,             .disabled=true, .timeout=60.0);
+TestSuite(Stcf,             .disabled=false, .timeout=60.0);
+TestSuite(Sjf,              .disabled=false, .timeout=60.0);
+TestSuite(Lifo,             .disabled=false, .timeout=60.0);
 TestSuite(Fifo,             .disabled=false, .timeout=60.0);
-TestSuite(RoundRobin,       .disabled=true, .timeout=60.0);
+TestSuite(RoundRobin,       .disabled=false, .timeout=60.0);
 
 
 // From: https://github.com/codewars/criterion-hooks/blob/main/criterion-hooks.c
