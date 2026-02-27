@@ -1,4 +1,4 @@
-/*Test(Fifo, test_2proc_0entry_0entry_fifo, .disabled=false) {
+Test(Fifo, test_2proc_0entry_0entry_fifo, .disabled=false) {
   SCHEDULER_STATS* stats = get_empty_stats_block();
   SCHEDULER_PARAMS params = (SCHEDULER_PARAMS) {
     .preemptable = false,
@@ -320,4 +320,4 @@ Test(RoundRobin, 5proc_rr, .disabled=false) {
   cr_expect_float_eq(stats->average_turnaround_time,  20.25, FLOAT_EPSILON);
   cr_expect_float_eq(stats->average_response_time,    0,  FLOAT_EPSILON);
   // printf("-----------------------------------\n");
-}*/
+}

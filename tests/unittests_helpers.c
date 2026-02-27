@@ -8,7 +8,6 @@ Test(HelperFunctions, mark_start, .disabled=false) {
   cr_assert(p->priority == 0);
   cr_assert(p->entry_time == 0.0f);
   cr_assert(p->time_remaining == 1.0f);
-
   cr_assert(s->num_processes_started == 1);
   cr_assert(s->num_processes_completed == 0);
   cr_assert(s->sum_of_turnaround_times == 0.0f);
@@ -17,7 +16,6 @@ Test(HelperFunctions, mark_start, .disabled=false) {
   cr_assert(s->average_response_time == 0.0f);
   cr_assert(s->completion_time == 0.0f);
 }
-
 Test(HelperFunctions, mark_end, .disabled=false) {
   SCHEDULER_STATS* s = get_empty_stats_block();
   PROCESS *p = create_process(1.0f, 0, 0.0f);
@@ -53,7 +51,7 @@ Test(HelperFunctions, finalize_stats, .disabled=false) {
 
   cr_assert(s->num_processes_started == 2);
   cr_assert(s->num_processes_completed == 2);
-  cr_assert(s->sum_of_turnaround_times == 3.0f);
+	cr_assert(s->sum_of_turnaround_times == 3.0f);
   cr_assert(s->sum_of_response_time == 1.0f);
   cr_assert(s->average_turnaround_time == 1.5f);
   cr_assert(s->average_response_time == 0.5f);

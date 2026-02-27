@@ -24,7 +24,7 @@
 #include "tests/unittests_sjf.c"
 #include "tests/unittests_stcf.c"
 
-TestSuite(HelperFunctions,  .disabled=true, .timeout=60.0);
+TestSuite(HelperFunctions,  .disabled=false, .timeout=60.0);
 TestSuite(Priority,         .disabled=false, .timeout=60.0);
 TestSuite(Stcf,             .disabled=true, .timeout=60.0);
 TestSuite(Sjf,              .disabled=true, .timeout=60.0);

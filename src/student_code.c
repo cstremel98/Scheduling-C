@@ -6,14 +6,18 @@
 #include "stdio.h"
 
 void mark_start(PROCESS* p, SCHEDULER_STATS* stats, float time_started) {
-  // todo
+	stats->num_processes_started += 1;
+	stats->sum_of_response_time += time_started - p->entry_time;
 }
 
 void mark_end(PROCESS* p, SCHEDULER_STATS* stats, float time_completed) {
-  // todo
+	stats->num_processes_completed += 1;
+	stats->sum_of_turnaround_times += time_completed - p->entry_time; // 1 - 0
 }
 
 void finalize_stats(SCHEDULER_STATS* stats) {
+	stats->average_response_time = stats->sum_of_response_time / stats->num_processes_started;
+	stats->average_turnaround_time = stats->sum_of_turnaround_times / stats->num_processes_completed;
   // todo
 }
 
