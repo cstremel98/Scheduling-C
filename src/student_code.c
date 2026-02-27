@@ -48,13 +48,14 @@ int compare_last_run(PROCESS p1, PROCESS p2) {
 PROCESS* fifo_process_selector(PROCESS_LIST* pl) {
 	PROCESS* curr_process =	pl->processes[pl->num_processes-1]; 
 	SCHEDULER_STATS* stats = get_empty_stats_block();
+	stats->num_processes_started = pl->num_processes;
 
 	if(!is_empty(pl)) {
 	
 		for(int i=0; i<pl->num_processes; i++) {
-			if(pl->processes[i]->priority < curr_process->priority) {
+			if(pl->processes[i]->entry_time < curr_process->entry_time) {
 				curr_process = pl->processes[i];
-			} else if ((pl->processes[i]->priority == curr_process->priority) && (pl->processes[i]->id < curr_process->id)) {
+			} else if ((pl->processes[i]->entry_time == curr_process->entry_time) && (pl->processes[i]->id < curr_process->id)) {
 				curr_process = pl->processes[i];
 			}
 		}	
@@ -82,6 +83,7 @@ PROCESS* priority_process_selector(PROCESS_LIST* pl) {
 	
 	PROCESS* curr_process =	pl->processes[pl->num_processes-1]; 
 	SCHEDULER_STATS* stats = get_empty_stats_block();
+	float curr_time = 0;
 
 	if(!is_empty(pl)) {
 		for(int i=0; i<pl->num_processes; i++) {
@@ -92,7 +94,6 @@ PROCESS* priority_process_selector(PROCESS_LIST* pl) {
 			}
 		}	
 		
-		float curr_time = 0;
 
 		run(curr_process, stats, curr_time);
 		

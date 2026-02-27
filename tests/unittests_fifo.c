@@ -1,5 +1,4 @@
 // 1
-/*
 Test(Fifo, e0) {
   PROCESS *p0 = create_process(1.0f, 0.0f, 0.0f);
   PROCESS_LIST *pl = create_process_list();
@@ -25,6 +24,7 @@ Test(Fifo, e0_e1) {
 
 // 3
 Test(Fifo, e1_e0) {
+			      //dur, prio, entry
   PROCESS *p0 = create_process(1.0f, 0.0f, 1.0f);
   PROCESS *p1 = create_process(1.0f, 0.0f, 0.0f);
   PROCESS_LIST *pl = create_process_list();
@@ -99,4 +99,4 @@ Test(Fifo, single_process_zero_duration) {
   PROCESS *selected = fifo_process_selector(pl);
   cr_assert(selected == p0);
   cr_assert(p0->duration == 0.0f);
-}*/
+}
